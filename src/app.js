@@ -1,11 +1,11 @@
 async function run() {
   // A service worker must be registered in order to send notifications on iOS
-  const registration = await navigator.serviceWorker.register(
-    "serviceWorker.js",
-    {
-      scope: "./src",
-    }
-  );
+  // const registration = await navigator.serviceWorker.register(
+  //   "serviceWorker.js",
+  //   {
+  //     scope: "./",
+  //   }
+  // );
 
   const button = document.getElementById("subscribe");
   button.addEventListener("click", async () => {
@@ -17,9 +17,10 @@ async function run() {
       // You must use the service worker notification to show the notification
       // Using new Notification("Hello World", { body: "My first notification on iOS"}) does not work on iOS
       // despite working on other platforms
-      await registration.showNotification("Hello World", {
-        body: "My first notification on iOS",
-      });
+      console.log('granted');
+      // await registration.showNotification("Hello World", {
+      //   body: "My first notification on iOS",
+      // });
     }
   });
 }

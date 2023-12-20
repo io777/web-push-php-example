@@ -1,9 +1,9 @@
 async function run() {
   // A service worker must be registered in order to send notifications on iOS
   const registration = await navigator.serviceWorker.register(
-    "src/serviceWorker.js",
+    "serviceWorker.js",
     {
-      scope: "./",
+      scope: "./src",
     }
   );
 
